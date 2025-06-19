@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check All Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .checkbox-list {
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .checkbox-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e1e5e9;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .checkbox-header label {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-row {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e1e5e9;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-row:hover {
+            background-color: #f8f9fa;
+        }
+
+        .checkbox-row:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox-row label {
+            color: #555;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        /* Custom Checkbox Styles */
+        .custom-checkbox {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .custom-checkbox.checked {
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .custom-checkbox.indeterminate {
+            background: #FF9800;
+            border-color: #FF9800;
+        }
+
+        .custom-checkbox::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .custom-checkbox.checked::after {
+            opacity: 1;
+        }
+
+        .custom-checkbox.indeterminate::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 8px;
+            width: 10px;
+            height: 2px;
+            background: white;
+            border: none;
+            transform: none;
+            opacity: 1;
+        }
+
+        /* Hide default checkbox */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .status p {
+            color: #2e7d32;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .item-number {
+            color: #999;
+            font-size: 12px;
+            min-width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Check All Demo</h1>
+        </div>
+
+        <div class="checkbox-list">
+            <!-- Header với checkbox chính -->
+            <div class="checkbox-header">
+                <input type="checkbox" id="checkAll">
+                <label for="checkAll">
+                    <span class="custom-checkbox" id="checkAllVisual"></span>
+                    Chọn tất cả
+                </label>
+            </div>
+
+            <!-- Danh sách 10 rows -->
+            <div class="checkbox-row">
+                <input type="checkbox" id="item1" class="item-checkbox">
+                <label for="item1">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">01</span>
+                    Item số 1
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item2" class="item-checkbox">
+                <label for="item2">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">02</span>
+                    Item số 2
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item3" class="item-checkbox">
+                <label for="item3">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">03</span>
+                    Item số 3
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item4" class="item-checkbox">
+                <label for="item4">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">04</span>
+                    Item số 4
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item5" class="item-checkbox">
+                <label for="item5">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">05</span>
+                    Item số 5
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item6" class="item-checkbox">
+                <label for="item6">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">06</span>
+                    Item số 6
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item7" class="item-checkbox">
+                <label for="item7">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">07</span>
+                    Item số 7
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item8" class="item-checkbox">
+                <label for="item8">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">08</span>
+                    Item số 8
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item9" class="item-checkbox">
+                <label for="item9">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">09</span>
+                    Item số 9
+                </label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item10" class="item-checkbox">
+                <label for="item10">
+                    <span class="custom-checkbox"></span>
+                    <span class="item-number">10</span>
+                    Item số 10
+                </label>
+            </div>
+        </div>
+
+        <div class="status">
+            <p id="statusText">Đã chọn: 0 / 10 items</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html> 
