@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check All</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-list {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .checkbox-header {
+            background: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .checkbox-row {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkbox-row:last-child {
+            border-bottom: none;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Check All Demo</h1>
+        </div>
+
+        <div class="checkbox-list">
+            <!-- Header với checkbox chính -->
+            <div class="checkbox-header">
+                <input type="checkbox" id="checkAll">
+                <label for="checkAll">Chọn tất cả</label>
+            </div>
+
+            <!-- Danh sách 10 rows -->
+            <div class="checkbox-row">
+                <input type="checkbox" id="item1" class="item-checkbox">
+                <label for="item1">Item số 1</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item2" class="item-checkbox">
+                <label for="item2">Item số 2</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item3" class="item-checkbox">
+                <label for="item3">Item số 3</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item4" class="item-checkbox">
+                <label for="item4">Item số 4</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item5" class="item-checkbox">
+                <label for="item5">Item số 5</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item6" class="item-checkbox">
+                <label for="item6">Item số 6</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item7" class="item-checkbox">
+                <label for="item7">Item số 7</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item8" class="item-checkbox">
+                <label for="item8">Item số 8</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item9" class="item-checkbox">
+                <label for="item9">Item số 9</label>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="item10" class="item-checkbox">
+                <label for="item10">Item số 10</label>
+            </div>
+        </div>
+
+        <div class="status">
+            <p id="statusText">Đã chọn: 0 / 10 items</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html> 
